@@ -1,2 +1,12 @@
-# goblin-tokens
-Goblin Tokens — metadata &amp; registry for Goblin tokens. Stores names, symbols, decimals, mint addresses, and icons for Goblin’s platform token and per-bot tokens. Day-1: pilot registry structure only, no live mints. Keeps on-chain programs separate from descriptive metadata.
+# Goblin Tokens — Metadata & Registry
+Non-executable token configs for the Goblin ecosystem.
+
+- Platform and per-bot token entries (JSON/YAML), icons/links, notes.
+- Separate from smart contracts in `goblin-programs`.
+
+**Bucket:** On-Chain Core (Solana)
+**Status:** PILOT (registry structure only)
+
+- Overview → /docs/OVERVIEW.md
+- Schema → /docs/SCHEMA.md
+- How to propose changes → /ops/RUNBOOK.md
