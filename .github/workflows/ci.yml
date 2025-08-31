@@ -1,0 +1,25 @@
+name: CI (tokens registry)
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure scaffold exists
+        run: |
+          test -d metadata
+          test -f metadata/_templates/token.example.json
+          test -f docs/SCHEMA.md
+          test -f ops/RUNBOOK.md
+      - name: Basic JSON sanity check
+        run: |
+          if command -v jq >/dev/null 2>&1; then
+            for f in $(git ls-files 'metadata/*.json' ':!:metadata/_templates/*'); do
+              echo "Checking $f"; jq . "$f" >/dev/null;
+            done
+          else
+            echo "jq not available; skipping JSON parse check"
+          fi

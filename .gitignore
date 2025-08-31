@@ -1,0 +1,9 @@
+# Icons/art can be added, but avoid large binaries
+*.psd
+*.ai
+*.zip
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
